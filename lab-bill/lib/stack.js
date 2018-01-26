@@ -1,5 +1,7 @@
 'use strict';
 
+const Node = require('./node.js');
+
 module.exports = class {
   constructor(maxSize=1048) {
     this.top = null;
