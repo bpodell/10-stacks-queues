@@ -41,12 +41,36 @@ describe('stack data structure module', function() {
       expect(this.stack.top.val).toEqual(1);
       expect(this.stack.pop().val).toEqual(1);
     });
+    it('should throw an error if there is nothing to pop', () => {
+      expect(() => {
+        this.stack.pop();
+      }).toThrow();
+    });
+    it('should decrease the size of the stack', () => {
+      this.stack.push(1);
+      this.stack.push(2);
+      this.stack.push(3);
+      this.stack.push(4);
+      this.stack.pop();
+      expect(this.stack.size).toEqual(3);
+    });
   });
   describe('PEEK', () => {
     it('should return the top of the stack', ()=> {
       expect(this.stack.top).toBeNull();
       this.stack.push(1);
       expect(this.stack.peek().val).toEqual(1);
+    });
+    it('should throw an error if there is nothing to see', () => {
+      expect(() => this.stack.peek()).toThrow();
+    });
+    it('should return the top of the stack even after something has been removed', ()=> {
+      expect(this.stack.top).toBeNull();
+      this.stack.push(1);
+      this.stack.push(2)
+      this.stack.push(3)
+      this.stack.pop()
+      expect(this.stack.peek().val).toEqual(2);
     });
   });
 });
