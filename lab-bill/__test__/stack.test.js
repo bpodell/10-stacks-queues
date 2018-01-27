@@ -67,9 +67,9 @@ describe('stack data structure module', function() {
     it('should return the top of the stack even after something has been removed', ()=> {
       expect(this.stack.top).toBeNull();
       this.stack.push(1);
-      this.stack.push(2)
-      this.stack.push(3)
-      this.stack.pop()
+      this.stack.push(2);
+      this.stack.push(3);
+      this.stack.pop();
       expect(this.stack.peek().val).toEqual(2);
     });
   });

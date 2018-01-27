@@ -26,9 +26,7 @@ module.exports = class {
 
   dequeue(){
     if(!this.front) throw new Error('nothing to remove');
-    let temp = this.front;
-    this.front = temp.next;
-    temp.next = null;
+    this.front = this.front.next;
     this.size --;
     return this.front;
 
